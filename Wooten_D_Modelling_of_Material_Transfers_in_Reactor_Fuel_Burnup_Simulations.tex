@@ -7,6 +7,9 @@
 % This is for figures
 \usepackage{graphicx}
 
+% This is for a pretty code font
+\usepackage{courier}
+
 %For tables
 \usepackage{multirow}
 
@@ -57,7 +60,7 @@
     \begin{itemize}
         \item Molten salt reactors ( MSR ) 
         \item Fuel salt evaluation 
-        \item ADER
+        \item ADDER
         \item Keeping the problem linear
         \item The optimal solution
         \item Modifying the Bateman equations
@@ -66,6 +69,18 @@
         \item Future Work
         \item References
     \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{How much code do you want to see?}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75\paperwidth, keepaspectratio]{Grand_Teton}
+        \caption{View from the summit of Mt. Brown, elevation 8,566ft.}
+        \label{fig:msr_pic}
+    \end{figure}
 
 \end{frame}
 
@@ -115,12 +130,12 @@ For better answers we need better tools.
 \begin{frame}
 \frametitle{Pertinent phenomenon}
 
-    \begin{enumerate}
+    \begin{itemize}
         \item Solubility
         \item Reduction - Oxidation ( Redox ) potential of the salt
         \item Reactor reactivity
         \item Available chemical forms
-    \end{enumerate}
+    \end{itemize}
 
 \end{frame}
 
@@ -130,19 +145,19 @@ For better answers we need better tools.
 A source code modification to the SERPENT 2 Monte Carlo code which enables the
 user to \ldots
 
-    \begin{enumerate}
+    \begin{itemize}
         \item define material transfers into, out of, and between SERPENT materials
         \item define and enforce relationships between isotopes, elements, and chemicals in SERPENT materials
-        \item define system k-eigenvalue targets
+        \item define system $k$-eigenvalue targets
         \item define a weighted-average target for the valance state of a given SERPENT material
-    \end{enumerate}
+    \end{itemize}
 
 \end{frame}
 
 \begin{frame}
 \frametitle{Best practices and ADDER}
 
-    \begin{enumerate}
+    \begin{itemize}
         \item Input
         \item Output
         \item Failures
@@ -150,9 +165,51 @@ user to \ldots
         \item Architecture
         \item Testing
         \item Documentation
-    \end{enumerate}
+    \end{itemize}
 
 \end{frame}
+
+\begin{frame}
+\frametitle{How does it all work?}
+
+Observe the humble \textbf{\textit{stream}}
+
+\hspace{2cm}
+
+\small{\texttt{stream to Tank from Reactor group UF4 type feed form cont}}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The group}
+
+\small{\texttt{stream to Tank from Reactor \textbf{group UF4} type feed form cont}}
+
+\hspace{3cm}
+
+\texttt{grp UF4}\\
+\texttt{F   4}\\
+\texttt{U   1   isos    2}\\
+\texttt{    U-233    5}\\
+\texttt{    U-238   95}
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{frame}
 \frametitle{In conclusion\ldots}
