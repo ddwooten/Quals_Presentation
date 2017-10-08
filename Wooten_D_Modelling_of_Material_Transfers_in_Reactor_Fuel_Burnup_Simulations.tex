@@ -122,7 +122,9 @@ time in response to both nuclear fuel burnup and reactor operator actions?
 
 The only general purpose tool available, Monteburns, only addresses isotopic
 evolution.
-\\
+
+\hspace{2cm}
+
 For better answers we need better tools.
 
 \end{frame}
@@ -185,7 +187,7 @@ Observe the humble \textbf{\textit{stream}}
 
 \small{\texttt{stream to Tank from Reactor \textbf{group UF4} type feed form cont}}
 
-\hspace{3cm}
+\hspace{2cm}
 
 \texttt{grp UF4}\\
 \texttt{F   4}\\
@@ -195,10 +197,28 @@ Observe the humble \textbf{\textit{stream}}
 
 \end{frame}
 
+\begin{frame}
+\frametitle{Constituent relationships}
 
+\texttt{rng PuF3    min 0.0 max 0.01}
 
+\hspace{2cm}
 
+\texttt{rto FLiBe   min 4   max 99  grp2    UF4}
 
+\end{frame}
+
+\begin{frame}
+\frametitle{Charge balancing}
+
+Fission events may be eiter be reducing or oxidizing in nature. Operator
+actions may be either reducing or oxidizing.
+
+\hspace{2cm}
+
+$UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
+
+\end{frame}
 
 
 
