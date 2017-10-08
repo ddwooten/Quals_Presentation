@@ -11,7 +11,7 @@
 \usepackage{multirow}
 
 % This is the path to the majority of the figures
-\graphicspath{{/home/ddwooten/Dropbox/Dans_Stuff/Documents/UCB/Quals/Presentation/Figures}}
+\graphicspath{{/home/ddwooten/Dropbox/Dans_Stuff/Documents/UCB/Quals/Presentation/Figures/}}
 
 % For equation formatting
 \usepackage{amsmath}
@@ -41,7 +41,7 @@
   \usebackgroundtemplate{}
 }
 
-\title[Modelling of Material Transfers in Reactor Fuel Burnup Simulations]
+\title[Modelling of Material Transfers in Reactor Fuel Burnup Simulations]{}
 \author{Daniel D. Wooten}
 \institute{UC Berkeley}
 \date{October 20\textsuperscript{th}, 2017}
@@ -84,13 +84,73 @@
 \begin{frame}
 \frametitle{Fuel Salt Selection}
 
-Considerations\ldots
+Considerations \ldots
 
     \begin{itemize}
         \item Structural materials corrosion 
         \item Heavy element solubility
         \item Isotopic evolution
     \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The question}
+
+How does the fuel salt composition in a molten salt fueled reactor change over
+time in response to both nuclear fuel burnup and reactor operator actions?
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Finding the answer}
+
+The only general purpose tool available, Monteburns, only addresses isotopic
+evolution.
+\\
+For better answers we need better tools.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Pertinent phenomenon}
+
+    \begin{enumerate}
+        \item Solubility
+        \item Reduction - Oxidation ( Redox ) potential of the salt
+        \item Reactor reactivity
+        \item Available chemical forms
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Advanced Dynamic Depletion Extension for Reprocessing - ADDER}
+
+A source code modification to the SERPENT 2 Monte Carlo code which enables the
+user to \ldots
+
+    \begin{enumerate}
+        \item define material transfers into, out of, and between SERPENT materials
+        \item define and enforce relationships between isotopes, elements, and chemicals in SERPENT materials
+        \item define system k-eigenvalue targets
+        \item define a weighted-average target for the valance state of a given SERPENT material
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Best practices and ADDER}
+
+    \begin{enumerate}
+        \item Input
+        \item Output
+        \item Failures
+        \item Stlye
+        \item Architecture
+        \item Testing
+        \item Documentation
+    \end{enumerate}
 
 \end{frame}
 
@@ -112,7 +172,7 @@ Considerations\ldots
 \begin{frame}[allowframebreaks]
 \frametitle{References}
 
-\bibliography{Kinetics}
+%\bibliography{Quals}
 
 \end{frame}
 
@@ -121,7 +181,7 @@ Considerations\ldots
 
     \begin{itemize}
         \item 316 Stainless steel, in a 316L stainless steel crucible, in FLiNaK (46.5\%LiF - 11.5\%NaF - 42\%KF) salt has a reported corrosion rate of 17.1$\mu$m/yr. \cite{zheng_corrosion_2015}
-        \item 316 Stainless steel, in a 316L stainless steel crucible, in FLiBe salt has a reported corrosion rate of 125$\mu$m/yr $\pm$12.5$\mu$/yr.
+        \item 316 Stainless steel, in a 316L stainless steel crucible, in FLiBe salt has a reported corrosion rate of 125$\mu$m/yr $\pm$12.5$\mu$m/yr.
     \end{itemize}
 
 \end{frame}
@@ -132,7 +192,7 @@ Considerations\ldots
     \begin{figure}
         \centering
         \includegraphics[width=0.5\paperwidth, keepaspectratio]{LiF_UF4_ThF4_Liquidus}
-        \caption{Figure 5.2 from \cite{rosenthal_development_1972}
+        \caption{Figure 5.2 from \cite{rosenthal_development_1972}}
         \label{fig:lifufthf_liquidus}
     \end{figure}
 
