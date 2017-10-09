@@ -25,6 +25,9 @@
 % For sizing summations properly
 \usepackage{relsize}
 
+% For isotope notation
+\usepackage{mhchem}
+
 % Biblography Style
 \bibliographystyle{elsarticle-num}
 
@@ -346,15 +349,89 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
                                & 1                 & 1                 &
                                &                   &                   &
              \\
+                               & Opt               & 1                 &
+                               &                   &                   &
+                               &                   &                   &
+             \\
             \end{block}
         \end{blockarray}
     \end{equation*}
 
 \end{frame}
 
+\begin{frame}
+\frametitle{What the answer tells us}
 
+Optmized material transfers
 
+\end{frame}
 
+\begin{frame}
+\frametitle{The Bateman Equation}
+
+    \begin{equation}
+    \begin{split}
+        \frac{\partial N_{i}(\vec{r},t)}{\partial t} = & \sum \limits_{j}^{N} 
+        b_{j \rightarrow i} \lambda_{j} N_{j}(\vec{r}, t) + \\
+        & \sum \limits_{k}^{N}
+        \sum \limits_{q}^{Q} \int_{0}^{\infty} f_{k \rightarrow i}^{q}(E)
+        \sigma_{q}^{k}(E) \phi(\vec{r},E,t) N_{k}(\vec{r},t)\mathrm{d}E - \\
+        & N_{i}(\vec{r},t) \lambda_{i} - \sum \limits_{d}^{D} \int_{0}^{\infty}
+        \sigma_{d}^{i}(E) \phi(\vec{r},E,t) N_{i}(\vec{r},t)\mathrm{d}E - \\
+        & R_{i}(\vec{r},t) N_{i}(\vec{r},t) + F_{i}(\vec{r},t)
+    \end{split}
+    \end{equation}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The depletion matrix}
+
+    \begin{equation*}
+        \begin{blockarray}{cccccc}
+             &
+            \ce{^{233}_{92}U} &
+            \ce{^{135}_{54}Xe} &
+            S_{c} &
+            S_{p} &
+            \mathbb{N} \\
+             &
+             &
+             &
+             &
+             &
+             \\ 
+        \begin{block}{c[cccc][c]}
+            \ce{^{233}_{92}U} &
+            -\lambda_{\ce{^{233}U}} + \gamma &
+             &
+            f_{S_{c}}^{\ce{^{233}U}} &
+             &
+            N_{\ce{^{233}U}} \\
+            \ce{^{135}_{54}Xe} &
+            \delta &
+            -\lambda_{\ce{^{135}Xe}} + \lambda_{S_{p}}^{\ce{^{135}Xe}} +
+                \epsilon &
+             &
+             &
+            N_{\ce{^{135}Xe}} \\
+            S_{c} &
+             &
+             &
+             &
+             &
+            amt_{S_{c}} \\
+            S_{p} &
+             &
+            \lambda_{S_{p}}^{\ce{^{135}Xe}} &
+             &
+             &
+             1\\
+        \end{block}
+        \end{blockarray}
+    \end{equation*}
+
+\end{frame}
 
 
 
