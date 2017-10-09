@@ -296,7 +296,8 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
 
     \begin{itemize}
         \item Maintain criticality with a $k$-eigenvalue target of 1.000 $\pm$ 500pcm
-        \item Serpent material \textit{Reactor} should have an average oxidationstate between -0.2 and 0.2.
+        \item Serpent material \textit{Reactor} should have an average oxidation
+        state between -0.2 and 0.2.
         \item Feed UF4 into \textit{Reactor} as needed from Serpent material \textit{Tank}
         \item Feed fission products from \textit{Reactor} to \textit{Tank}
         \item Feed LiF into \textit{Reactor} as needed
@@ -305,7 +306,7 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}[shrink=20]
 \frametitle{Bringing it all together}
 
     \begin{equation*}
@@ -346,29 +347,48 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
             {[0,0]}            & I_{b}^{1}         &                   &
                                &                   & 1                 &
             -1 \\
-            {(-\infty,0]}      & \rho_{max}        &                   &
-                               &                   &
-            \frac{k_{eff}^{max}}{p_{n\ell}}\Sigma_{a}^{I^{1}} -
-            \nu_{f}^{I^{1}}\Sigma_{f}^{I^{1}}                          &
-             \\
-            {[0,\infty]}       & \rho_{min}        &                   &
-                               &                   &
-            \frac{k_{eff}^{min}}{p_{n\ell}}\Sigma_{a}^{I^{1}} -
-            \nu_{f}^{I^{1}}\Sigma_{f}^{I^{1}}                          &
-             \\
-            {[min,max]}        & Oxi               &                   &
-                               &                   &                   &
-            oxi^{E^{1}}        &                   &                   &
-             \\
-            {[0,0]}            & Pres              &                   &
-                               & 1                 & 1                 &
-             \\
             \end{block}
         \end{blockarray}
     \end{equation*}
 
 \end{frame}
 
+\begin{frame}[shrink=20]
+\frametitle{Bringing it all together}
+
+    \begin{equation*}
+        \begin{blockarray}{cccccccc}
+                               &                   & (-\infty,\infty)  &
+            (-\infty,\infty)   & [0,1]             & (-\infty,\infty)  &
+            [0,1]              & (-\infty,\infty)  \\ 
+                               &                   & s_{1}             & 
+            s_{2}              & E_{f}^{1}         & E_{d}^{1}         & 
+            I_{f}^{1}          & I_{d}^{1}         \\
+                               &                   &                   &
+                               &                   &                   &
+                               &                   \\
+            \begin{block}{cc[cccccc]}
+            {(-\infty,0]}      & \rho_{max}        &                   &
+                               &                   &                   &
+            \frac{k_{eff}^{max}}{p_{n\ell}}\Sigma_{a}^{I^{1}} -
+            \nu_{f}^{I^{1}}\Sigma_{f}^{I^{1}}                          
+                               &                   \\
+            {[0,\infty]}       & \rho_{min}        &                   &
+                               &                   &                   &
+            \frac{k_{eff}^{min}}{p_{n\ell}}\Sigma_{a}^{I^{1}} -
+            \nu_{f}^{I^{1}}\Sigma_{f}^{I^{1}}                          
+                               &                   \\
+            {[min,max]}        & Oxi               &                   &
+                               & oxi^{E^{1}}       &                   &
+                               &                   \\
+             \\
+            {[0,0]}            & Pres              & 1                 &
+            1                  &                   \\                 
+            \end{block}
+        \end{blockarray}
+    \end{equation*}
+
+\end{frame}
 
 
 
