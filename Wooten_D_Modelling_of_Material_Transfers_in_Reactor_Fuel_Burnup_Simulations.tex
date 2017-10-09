@@ -13,6 +13,9 @@
 %For tables
 \usepackage{multirow}
 
+% For nice matrices
+\usepackage{blkarray}
+
 % This is the path to the majority of the figures
 \graphicspath{{/home/ddwooten/Dropbox/Dans_Stuff/Documents/UCB/Quals/Presentation/Figures/}}
 
@@ -225,12 +228,12 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
 
     \begin{equation}
     \label{reactivity}
-        k_{eff} = \rho_{n\ell}\left(\frac{\nu_{f}\Sigma_{f}}{\Sigma_{a}}\right)
+        k_{eff} = p_{n\ell}\left(\frac{\nu_{f}\Sigma_{f}}{\Sigma_{a}}\right)
     \end{equation}
 
     \begin{equation}
     \label{reactivity_sum}
-        k_{eff} = \rho_{n\ell}\left(\frac{\sum\limits_{i}^{I}\nu_{f}^{i}\Sigma_{f}^{i}}{\sum\limits_{i}^{I}\Sigma_{a}^{i}}\right)
+        k_{eff} = p_{n\ell}\left(\frac{\sum\limits_{i}^{I}\nu_{f}^{i}\Sigma_{f}^{i}}{\sum\limits_{i}^{I}\Sigma_{a}^{i}}\right)
     \end{equation}
 
 \end{frame}
@@ -250,12 +253,12 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
 
     \begin{equation}
     \label{max_reac}
-        \frac{k_{eff}^{max}}{\rho_{n\ell}}\sum\limits_{i}^{I}\Sigma_{a}^{I} - \sum\limits_{i}^{I}\nu_{f}^{i}\Sigma_{f}^{i} < 0
+        \frac{k_{eff}^{max}}{p_{n\ell}}\sum\limits_{i}^{I}\Sigma_{a}^{I} - \sum\limits_{i}^{I}\nu_{f}^{i}\Sigma_{f}^{i} < 0
     \end{equation}
 
     \begin{equation}
     \label{max_reac}
-        \frac{k_{eff}^{min}}{\rho_{n\ell}}\sum\limits_{i}^{I}\Sigma_{a}^{I} - \sum\limits_{i}^{I}\nu_{f}^{i}\Sigma_{f}^{i} > 0   
+        \frac{k_{eff}^{min}}{p_{n\ell}}\sum\limits_{i}^{I}\Sigma_{a}^{I} - \sum\limits_{i}^{I}\nu_{f}^{i}\Sigma_{f}^{i} > 0   
     \end{equation}
 
 \end{frame}
@@ -267,11 +270,104 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
 
 \end{frame}
 
+\begin{frame}
+\frametitle{CLP}
 
+    \textbf{COIN-OR} \textbf{L}inear \textbf{P}rogramming is part of the larger
+    \textit{Computational Infrastructure for Operations Research} project
+    - a sizable, capabale, well documented, and well maintained, open-source
+     library for solving convex optimization problems. CLP, primarily written
+     by John J. Forrest from IBM Research, as noted by 
+     \cite{gearhart_comparison_2013} ``\textit{was the best solver of} [the open-source linear programming solvers] \textit{considered, in terms of
+     capability and performance.}"
 
+     \par
 
+     While CLP is not as fast as a commerical solver, say CPLEX, it is plenty
+     fast. For an LP problem with $10^{11}$ float entries CLP was 2.75x slower
+     than CPLEX - finishing in 616s. 
 
+\end{frame}
 
+\begin{frame}
+\frametitle{Bringing it all together}
+
+    In words \ldots
+
+    \begin{itemize}
+        \item Maintain criticality with a $k$-eigenvalue target of 1.000 $\pm$ 500pcm
+        \item Serpent material \textit{Reactor} should have an average oxidationstate between -0.2 and 0.2.
+        \item Feed UF4 into \textit{Reactor} as needed from Serpent material \textit{Tank}
+        \item Feed fission products from \textit{Reactor} to \textit{Tank}
+        \item Feed LiF into \textit{Reactor} as needed
+        \item Feed $\textrm{BeF}_{2}$ into \textit{Reactor} as needed
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Bringing it all together}
+
+    \begin{equation*}
+        \begin{blockarray}{cccccccccc}
+                               &                   & [0,1]             &
+            [0,1]              & (-\infty,\infty)  & (-\infty,\infty)  &
+            [0,1]              & (-\infty,\infty)  & [0,1]             &
+            (-\infty,\infty)  \\ 
+                               &                   & g_{1}             &
+            g_{2}              & s_{1}             & s_{2}             &
+            E_{f}^{1}          & E_{d}^{1}         & I_{f}^{1}         &
+            I_{d}^{1} \\
+                               &                   &                   &
+                               &                   &                   &
+                               &                   &                   &
+             \\ 
+            \begin{block}{cc[cccccccc]}
+            [-1,0]             & E_{f}^{1}         & f_{g_{1}}^{E^{1}} &
+            f_{g_{2}}^{E^{1}}  &                   &                   &
+            -1                 &                   &                   &
+             \\
+            {[0,0]}            & E_{d}^{1}         &                   &
+                               & f_{s_{1}}^{E^{1}} & f_{s_{2}}^{E^{1}} &
+                               & -1                &                   &
+             \\
+            {[0,0]}            & E_{b}^{1}         &                   &
+                               &                   &                   &
+            1                  & -1                &                   &
+             \\
+            {[-1,0]}           & I_{f}^{1}         & f_{g_{1}}^{I^{1}} &
+            f_{g_{2}}^{I^{1}}  &                   &                   &
+                               &                   & -1                &
+             \\
+            {[0,0]}            & I_{d}^{1}         &                   &
+                               & f_{s_{1}}^{I^{1}} & f_{s_{2}}^{I^{1}} &
+                               &                   &                   &
+            -1 \\
+            {[0,0]}            & I_{b}^{1}         &                   &
+                               &                   & 1                 &
+            -1 \\
+            {(-\infty,0]}      & \rho_{max}        &                   &
+                               &                   &
+            \frac{k_{eff}^{max}}{p_{n\ell}}\Sigma_{a}^{I^{1}} -
+            \nu_{f}^{I^{1}}\Sigma_{f}^{I^{1}}                          &
+             \\
+            {[0,\infty]}       & \rho_{min}        &                   &
+                               &                   &
+            \frac{k_{eff}^{min}}{p_{n\ell}}\Sigma_{a}^{I^{1}} -
+            \nu_{f}^{I^{1}}\Sigma_{f}^{I^{1}}                          &
+             \\
+            {[min,max]}        & Oxi               &                   &
+                               &                   &                   &
+            oxi^{E^{1}}        &                   &                   &
+             \\
+            {[0,0]}            & Pres              &                   &
+                               & 1                 & 1                 &
+             \\
+            \end{block}
+        \end{blockarray}
+    \end{equation*}
+
+\end{frame}
 
 
 
@@ -395,4 +491,5 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
     subtract them from the constraints and the objective.
 
 \end{frame}
+
 \end{document}
