@@ -50,7 +50,7 @@
   \usebackgroundtemplate{}
 }
 
-\title[Modelling of Material Transfers in Reactor Fuel Burnup Simulations]{}
+\title[Modelling of Material Transfers in MSRs]{}
 \author{Daniel D. Wooten}
 \institute{UC Berkeley}
 \date{October 20\textsuperscript{th}, 2017}
@@ -157,7 +157,7 @@ user to \ldots
         \item define material transfers into, out of, and between SERPENT materials
         \item define and enforce relationships between isotopes, elements, and chemicals in SERPENT materials
         \item define system $k$-eigenvalue targets
-        \item define a weighted-average target for the valance state of a given SERPENT material
+        \item define a weighted-average target for the oxidation state of a given SERPENT material
     \end{itemize}
 
 \end{frame}
@@ -279,9 +279,9 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
     \textbf{COIN-OR} \textbf{L}inear \textbf{P}rogramming is part of the larger
     \textit{Computational Infrastructure for Operations Research} project
     - a sizable, capable, well documented, and well maintained, open-source
-     library for solving convex optimization problems. CLP, primarily written
-     by John J. Forrest from IBM Research, as noted by 
-     \cite{gearhart_comparison_2013} ``\textit{was the best solver of} [the open-source linear programming solvers] \textit{considered, in terms of
+     library for solving convex optimization problems. CLP
+     , as noted by 
+     \cite{gearhart_comparison_2013}, ``\textit{was the best solver of} [the open-source linear programming solvers] \textit{considered, in terms of
      capability and performance.}"
 
      \par
@@ -322,6 +322,10 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
                                &                   &                   &
             1                  & -1                &                   &
              \\
+            {[0,0]}            & E_{i}^{1}         &                   &
+                               &                   &                   &
+                               &                   & 1                 &
+             \\
             {[-1,0]}           & I_{f}^{1}         & f_{g_{1}}^{I^{1}} &
             f_{g_{2}}^{I^{1}}  &                   &                   &
                                &                   & -1                &
@@ -331,8 +335,9 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
                                &                   &                   &
             -1 \\
             {[0,0]}            & I_{b}^{1}         &                   &
+                               &                   &                   &
                                &                   & 1                 &
-            -1 \\
+            -1 \\ 
             {(-\infty,0]}      & \rho_{max}        &                   &
                                &                   &                   &
                                &                   & \alpha            &
@@ -448,7 +453,7 @@ Optimized material transfers
     \hspace{1cm}
 
     \begin{itemize}
-        \item Over 300 unit tests (~1 unit test / 20 lines of code )
+        \item Over 300 unit tests (approx. 1 unit test / 20 lines of code )
         \item Two integration test suites comprising some 5k+ lines of code
         \item System tests are in development
     \end{itemize}
@@ -499,7 +504,7 @@ Optimized material transfers
 \begin{frame}[allowframebreaks]
 \frametitle{References}
 
-%\bibliography{Quals}
+\bibliography{Quals}
 
 \end{frame}
 
