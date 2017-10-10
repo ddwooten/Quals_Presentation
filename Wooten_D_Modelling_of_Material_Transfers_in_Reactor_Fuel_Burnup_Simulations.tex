@@ -71,7 +71,7 @@
         \item The optimal solution
         \item Modifying the Bateman equations
         \item Designing for parallel operation
-        \item Verification and Vallidation
+        \item Verification and Validation
         \item Future Work
         \item References
     \end{itemize}
@@ -96,7 +96,7 @@
     \begin{figure}
         \centering
         \includegraphics[width=0.5\paperwidth, keepaspectratio]{MSR}
-        \caption{Figure coutesey of Idaho National Labs}
+        \caption{Figure courtesy of Idaho National Labs}
         \label{fig:msr_pic}
     \end{figure}
 
@@ -169,7 +169,7 @@ user to \ldots
         \item Input
         \item Output
         \item Failures
-        \item Stlye
+        \item Style
         \item Architecture
         \item Testing
         \item Documentation
@@ -217,7 +217,7 @@ Observe the humble \textbf{\textit{stream}}
 \begin{frame}
 \frametitle{Charge balancing}
 
-Fission events may be eiter be reducing or oxidizing in nature. Operator
+Fission events may be either be reducing or oxidizing in nature. Operator
 actions may be either reducing or oxidizing.
 
 \hspace{2cm}
@@ -278,7 +278,7 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
 
     \textbf{COIN-OR} \textbf{L}inear \textbf{P}rogramming is part of the larger
     \textit{Computational Infrastructure for Operations Research} project
-    - a sizable, capabale, well documented, and well maintained, open-source
+    - a sizable, capable, well documented, and well maintained, open-source
      library for solving convex optimization problems. CLP, primarily written
      by John J. Forrest from IBM Research, as noted by 
      \cite{gearhart_comparison_2013} ``\textit{was the best solver of} [the open-source linear programming solvers] \textit{considered, in terms of
@@ -286,7 +286,7 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
 
      \par
 
-     While CLP is not as fast as a commerical solver, say CPLEX, it is plenty
+     While CLP is not as fast as a commercial solver, say CPLEX, it is plenty
      fast. For an LP problem with $10^{11}$ float entries CLP was 2.75x slower
      than CPLEX - finishing in 616s. 
 
@@ -362,7 +362,7 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
 \begin{frame}
 \frametitle{What the answer tells us}
 
-Optmized material transfers
+Optimized material transfers
 
 \end{frame}
 
@@ -434,7 +434,7 @@ Optmized material transfers
 \end{frame}
 
 \begin{frame}
-\frametitle{SERPENT 2 in parrallel}
+\frametitle{SERPENT 2 in parallel}
 
     Whiteboard time!
 
@@ -475,7 +475,7 @@ Optmized material transfers
         \item Finish alpha version of ADDER
         \item Redo system testing
         \item Compile final documentation
-        \item Investiage various fuel cycles
+        \item Investigate various fuel cycles
 
     \end{itemize}
 
@@ -570,7 +570,7 @@ Optmized material transfers
 \frametitle{Simplex 3}
 
     In the event that $x_{i} \ngeq 0$ simply define a new variable $x_{k} = x_{i} - \beta$ where $\beta$ is chosen to satisfy the $\geq$ requirement.\\
-    The same solution applies to contraints which are not equalities.\\
+    The same solution applies to constraints which are not equalities.\\
     And what happens if all your coefficients in the last row are positive from
     the get go? Add more slack variables and ramp up the $\alpha$ on each one,
     subtract them from the constraints and the objective.
