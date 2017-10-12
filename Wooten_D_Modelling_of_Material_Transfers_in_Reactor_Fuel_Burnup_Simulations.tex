@@ -50,7 +50,7 @@
   \usebackgroundtemplate{}
 }
 
-\title[Modeling of Material Transfers in MSRs]{Modeling of Material Transfers in Reactor Fuel Burnup Simulations}
+\title[Modeling of Material Transfers in MSRs]{Modeling of Material Transfers in  Reactor Fuel Burnup Simulations}
 \author{Daniel D. Wooten}
 \institute{UC Berkeley}
 \date{October 20\textsuperscript{th}, 2017}
@@ -149,6 +149,14 @@ user to \ldots
 \end{frame}
 
 \begin{frame}
+\frametitle{But what does ADDER \textit{do}?}
+
+    ADDER determines the material transfers needed to achieve the optimal
+    composition for SERPENT materials given a set of constraints.
+
+\end{frame}
+
+\begin{frame}
 \frametitle{How does it all work?}
 
 Observe the humble \textbf{\textit{stream}}
@@ -200,23 +208,13 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
 \frametitle{Reactivity control}
 
     \begin{equation}
-    \label{reactivity}
-        k_{eff} = p_{n\ell}\left(\frac{\nu_{f}\Sigma_{f}}{\Sigma_{a}}\right)
+    \label{nufis}
+        \nu_{f}^{i}\Sigma_{f}^{i} = \frac{\int\limits_{0}^{\infty}\nu_{f}^{i}(E)\Sigma_{f}^{i}(E)\phi(E)dE}{\int\limits_{0}^{\infty}\phi(E)dE}
     \end{equation}
 
     \begin{equation}
     \label{reactivity_sum}
         k_{eff} = p_{n\ell}\left(\frac{\sum\limits_{i}^{I}\nu_{f}^{i}\Sigma_{f}^{i}}{\sum\limits_{i}^{I}\Sigma_{a}^{i}}\right)
-    \end{equation}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Reactivity control}
-
-    \begin{equation}
-    \label{nufis}
-        \nu_{f}^{i}\Sigma_{f}^{i} = \frac{\int\limits_{0}^{\infty}\nu_{f}^{i}(E)\Sigma_{f}^{i}(E)\phi(E)dE}{\int\limits_{0}^{\infty}\phi(E)dE}
     \end{equation}
 
 \end{frame}
@@ -333,13 +331,6 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
             \end{block}
         \end{blockarray}
     \end{equation*}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{What the answer tells us}
-
-Optimized material transfers
 
 \end{frame}
 
