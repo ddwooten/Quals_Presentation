@@ -122,7 +122,7 @@ For better answers we need better tools.
 \end{frame}
 
 \begin{frame}
-\frametitle{Pertinent phenomenon}
+\frametitle{Pertinent phenomena}
 
     \begin{itemize}
         \item Solubility
@@ -278,12 +278,12 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
 
 \end{frame}
 
-\begin{frame}[shrink=22]
+\begin{frame}[shrink=25]
 \frametitle{Bringing it all together}
 
     \begin{equation*}
         \begin{blockarray}{cccccccccc}
-                               &                   & [0,1]             &
+                               &                   & [a,b]             &
             [0,1]              & (-\infty,\infty)  & (-\infty,\infty)  &
             [0,1]              & (-\infty,\infty)  & [0,1]             &
             (-\infty,\infty)  \\ 
@@ -296,7 +296,15 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
                                &                   &                   &
              \\ 
             \begin{block}{cc[cccccccc]}
-            [-1,0]             & E_{f}^{1}         & f_{g_{1}}^{E^{1}} &
+            {(-\infty,0]}      & Rto_{m}           & -1                &
+            m                  &                   &                   &
+                               &                   &                   &
+             \\
+            {[0,\infty)}       & Rto_{M}           & -1                &
+            M                  &                   &                   &
+                               &                   &                   &
+             \\
+            {[-1,0]}           & E_{f}^{1}         & f_{g_{1}}^{E^{1}} &
             f_{g_{2}}^{E^{1}}  &                   &                   &
             -1                 &                   &                   &
              \\
@@ -304,7 +312,8 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
                                & f_{s_{1}}^{E^{1}} & f_{s_{2}}^{E^{1}} &
                                & -1                &                   &
              \\
-            {[0,0]}            & E_{b}^{1}         &                   &
+            {[E_{c}^{1},E_{c}^{1}]} 
+                               & E_{b}^{1}         &                   &
                                &                   &                   &
             1                  & -1                &                   &
              \\
@@ -320,19 +329,20 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
                                & f_{s_{1}}^{I^{1}} & f_{s_{2}}^{I^{1}} &
                                &                   &                   &
             -1 \\
-            {[0,0]}            & I_{b}^{1}         &                   &
+            {[I_{c}^{1},I_{c}^{!}]}
+                               & I_{b}^{1}         &                   &
                                &                   &                   &
                                &                   & 1                 &
             -1 \\ 
             {(-\infty,0]}      & \rho_{max}        &                   &
                                &                   &                   &
-                               &                   & \alpha            &
+                               &                   & c                 &
              \\
             {[0,\infty)}       & \rho_{min}        &                   &
                                &                   &                   &
-                               &                   & \beta             & 
+                               &                   & d                 & 
              \\
-            {[m,M]}        & Oxi               &                   &
+            {[e,f]}            & Oxi               &                   &
                                &                   &                   &
              oxi^{E^{1}}       &                   &                   &
              \\
