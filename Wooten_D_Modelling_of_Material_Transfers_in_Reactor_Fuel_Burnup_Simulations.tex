@@ -489,7 +489,7 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
         \centering
         \includegraphics[width=0.5\paperwidth, keepaspectratio]{LiF_UF4_ThF4_Liquidus}
         \caption{Figure 5.2 from \cite{rosenthal_development_1972}}
-        \label{fig:lifufthf_liquidus}
+        \label{fig:salt_liquidus}
     \end{figure}
 
 \end{frame}
@@ -547,11 +547,42 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
 \end{frame}
 
 \begin{frame}
+\frametitle{Simplex 4}
+
+    Minimize $s = 5x + 10y$ subject to $x \geq 5$, $y \geq 7$, $x + y \geq 15$,
+    and $x + y \leq 25$.
+
+\end{frame}
+
+\begin{frame}
 \frametitle{Computational intensity}
 
     \begin{itemize}
-        \item The simplex algorithm has worst case performance $O(2^{n})$ \cite{klee_how_1969}
+        \item The simplex algorithm has worst case performance $O(2^{n})$ \cite{klee_v._how_1969}
         \item CRAM as implemented in SERPENT 2 would appear to have $ O(n^{2})$ complexity
+\end{itemize}
+
+\begin{frame}
+\frametitle{SERPENT MPI performance} 
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\paperwidth, keepaspectratio]{SERPENT_MPI}
+        \caption{Figure 10.12 from \cite{leppanen_development_2007}}
+        \label{fig:serpent_mpi}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Speed of CRAM}
+
+This information is taken from \cite{isotalo_comparison_2011}.
+
+    \begin{itemize}
+        \item Maximum relative error in the study was $10^{3}$ for CRAM
+        \item Average errors were around $10^{-10}$
+        \item Time per step was about 0.05 seconds ( 3 GHz processor, 64 bit linux )
     \end{itemize}
 
 \end{frame}
