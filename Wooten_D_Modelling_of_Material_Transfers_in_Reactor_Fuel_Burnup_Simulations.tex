@@ -3,6 +3,9 @@
 % To fix an eps problem
 \usepackage[outdir=./]{epstopdf}
 
+% To fix the dumb beamer math font
+\usefonttheme[onlymath]{serif}
+
 % These two are for the beamer class
 \usepackage{fancyvrb}
 \usepackage{color}
@@ -89,6 +92,13 @@
 \begin{frame}
 \frametitle{What is an MSR?}
 
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75\paperwidth, keepaspectratio]{MSR}
+        \caption{Figure courtesy of Idaho National Labs}
+        \label{fig:msr}
+    \end{figure}
+
 \end{frame}
 
 \begin{frame}
@@ -115,8 +125,8 @@ time in response to both nuclear fuel burnup and reactor operator actions?
 \begin{frame}
 \frametitle{Finding the answer}
 
-The only general purpose tool available, Monteburns, only addresses isotopic
-evolution.
+    The few general purpose tools that exist to address this question only
+    consider feed and removal processes. 
 
 \hspace{2cm}
 
@@ -130,7 +140,7 @@ For better answers we need better tools.
     \begin{itemize}
         \item Solubility
         \item Reduction - Oxidation ( Redox ) potential of the salt
-        \item Reactor reactivity
+        \item Criticality control 
         \item Available chemical forms
     \end{itemize}
 
@@ -145,7 +155,7 @@ user to \ldots
     \begin{itemize}
         \item define material transfers into, out of, and between SERPENT materials
         \item define and enforce relationships between isotopes, elements, and chemicals in SERPENT materials
-        \item define system $k$-eigenvalue targets
+        \item define system $k_{eff}$ targets
         \item define a weighted-average target for the oxidation state of a given SERPENT material
     \end{itemize}
 
@@ -407,7 +417,12 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}$
 \begin{frame}
 \frametitle{SERPENT 2 in parallel}
 
-    Whiteboard time!
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\paperwidth, keepaspectratio]{Parallel_Serpent}
+        \caption{Schematic of SERPENT 2's parallel operation}
+        \label{fig:parallel_serpent}
+    \end{figure}
 
 \end{frame}
 
