@@ -1315,9 +1315,258 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}*O_{e}$
 \frametitle{What is d?}
 
     \begin{equation}
-        d = \frac{k_{eff}^{max}}{p_{n\ell}} \Sigma_{a}^{I_{f}^{1}} - 
+        d = \frac{k_{eff}^{min}}{p_{n\ell}} \Sigma_{a}^{I_{f}^{1}} - 
             \nu_{f}^{I_{f}^{1}} \Sigma_{f}^{I_{f}^{1}}
     \end{equation}
+
+\end{frame}
+
+\begin{frame}[shrink=25]
+% 13 
+\frametitle{Bringing it all together}
+
+    \begin{equation*}
+        \begin{blockarray}{cccccccccc}
+                               &                   & \g [a,b]          &
+            \g [0,1]           &\g(-\infty,\infty) &\g(-\infty,\infty) &
+            \b [0,1]           &\g(-\infty,\infty) & \g [0,1]          &
+            \g(-\infty,\infty) \\ 
+                               &                   & \g g_{1}          &
+            \g g_{2}           & \g s_{1}          & \g s_{2}          &
+            \b E_{f}^{1}       & \g E_{d}^{1}      & \g I_{f}^{1}      &
+            \g I_{d}^{1}       \\
+                               &                   &                   &
+                               &                   &                   &
+                               &                   &                   &
+             \\ 
+            \begin{block}{cc[cccccccc]}
+            \g {(-\infty,0]}   & \g Rto_{m}        & \g -1             &
+            \g m               &                   &                   &
+                               &                   &                   &
+             \\
+            \g {[0,\infty)}    & \g Rto_{M}        & \g -1             &
+            \g M               &                   &                   &
+                               &                   &                   &
+             \\
+             \g {[-1,0]}       & \g E_{f}^{1}      &\g f_{g_{1}}^{E^{1}}&
+             \g f_{g_{2}}^{E^{1}}&                 &                   &
+               \g -1           &                   &                   &
+             \\
+            \g {[0,0]}         & \g E_{d}^{1}      &                   &
+                               &\g f_{s_{1}}^{E^{1}}& \g f_{s_{2}}^{E^{1}}&
+                               & \g -1             &                   &
+             \\
+            \g {[E_{c}^{1},E_{c}^{1}]} 
+                               & \g E_{b}^{1}      &                   &
+                               &                   &                   &
+            \g 1               & \g -1             &                   &
+             \\
+            \g {[0,0]}         & \g E_{i}^{1}      &                   &
+                               &                   &                   &
+            \g -1              &                   & \g 1              &
+             \\
+            \g {[-1,0]}        & \g I_{f}^{1}      &\g f_{g_{1}}^{I^{1}}&
+            \g f_{g_{2}}^{I^{1}}&                  &                    &
+                               &                   & \g -1              &
+             \\
+            \g {[0,0]}         & \g I_{d}^{1}      &                   &
+                               &\g f_{s_{1}}^{I^{1}}&\g f_{s_{2}}^{I^{1}}&
+                               &                   &                   &
+            \g -1              \\
+            \g {[I_{c}^{1},I_{c}^{!}]}
+                               & \g I_{b}^{1}      &                   &
+                               &                   &                   &
+                               &                   & \g 1              &
+            \g -1              \\ 
+            \g {(-\infty,0]}   & \g \rho_{max}     &                   &
+                               &                   &                   &
+                               &                   & \g c              &
+             \\
+            \g {[0,\infty)}    & \g \rho_{min}     &                   &
+                               &                   &                   &
+                               &                   & \g d              & 
+             \\
+            \b {[e,f]}         & \b Oxi            &                   &
+                               &                   &                   &
+            \b oxi^{E^{1}}     &                   &                   &
+             \\
+            \w {[0,0]}         & \w Pres           &                   &
+                               & \w 1              & \w 1              &
+                               &                   &                   &
+             \\
+                               & \w Opt            & \w 1              &
+                               &                   &                   &
+                               &                   &                   &
+             \\
+            \end{block}
+        \end{blockarray}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}[shrink=25]
+% 14 
+\frametitle{Bringing it all together}
+
+    \begin{equation*}
+        \begin{blockarray}{cccccccccc}
+                               &                   & \g [a,b]          &
+            \g [0,1]           &\b(-\infty,\infty) &\b(-\infty,\infty) &
+            \g [0,1]           &\g(-\infty,\infty) & \g [0,1]          &
+            \g(-\infty,\infty) \\ 
+                               &                   & \g g_{1}          &
+            \g g_{2}           & \b s_{1}          & \b s_{2}          &
+            \g E_{f}^{1}       & \g E_{d}^{1}      & \g I_{f}^{1}      &
+            \g I_{d}^{1}       \\
+                               &                   &                   &
+                               &                   &                   &
+                               &                   &                   &
+             \\ 
+            \begin{block}{cc[cccccccc]}
+            \g {(-\infty,0]}   & \g Rto_{m}        & \g -1             &
+            \g m               &                   &                   &
+                               &                   &                   &
+             \\
+            \g {[0,\infty)}    & \g Rto_{M}        & \g -1             &
+            \g M               &                   &                   &
+                               &                   &                   &
+             \\
+             \g {[-1,0]}       & \g E_{f}^{1}      &\g f_{g_{1}}^{E^{1}}&
+             \g f_{g_{2}}^{E^{1}}&                 &                   &
+               \g -1           &                   &                   &
+             \\
+            \g {[0,0]}         & \g E_{d}^{1}      &                   &
+                               &\g f_{s_{1}}^{E^{1}}& \g f_{s_{2}}^{E^{1}}&
+                               & \g -1             &                   &
+             \\
+            \g {[E_{c}^{1},E_{c}^{1}]} 
+                               & \g E_{b}^{1}      &                   &
+                               &                   &                   &
+            \g 1               & \g -1             &                   &
+             \\
+            \g {[0,0]}         & \g E_{i}^{1}      &                   &
+                               &                   &                   &
+            \g -1              &                   & \g 1              &
+             \\
+            \g {[-1,0]}        & \g I_{f}^{1}      &\g f_{g_{1}}^{I^{1}}&
+            \g f_{g_{2}}^{I^{1}}&                  &                    &
+                               &                   & \g -1              &
+             \\
+            \g {[0,0]}         & \g I_{d}^{1}      &                   &
+                               &\g f_{s_{1}}^{I^{1}}&\g f_{s_{2}}^{I^{1}}&
+                               &                   &                   &
+            \g -1              \\
+            \g {[I_{c}^{1},I_{c}^{!}]}
+                               & \g I_{b}^{1}      &                   &
+                               &                   &                   &
+                               &                   & \g 1              &
+            \g -1              \\ 
+            \g {(-\infty,0]}   & \g \rho_{max}     &                   &
+                               &                   &                   &
+                               &                   & \g c              &
+             \\
+            \g {[0,\infty)}    & \g \rho_{min}     &                   &
+                               &                   &                   &
+                               &                   & \g d              & 
+             \\
+            \g {[e,f]}         & \g Oxi            &                   &
+                               &                   &                   &
+            \g oxi^{E^{1}}     &                   &                   &
+             \\
+            \b {[0,0]}         & \b Pres           &                   &
+                               & \b 1              & \b 1              &
+                               &                   &                   &
+             \\
+                               & \w Opt            & \w 1              &
+                               &                   &                   &
+                               &                   &                   &
+             \\
+            \end{block}
+        \end{blockarray}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}[shrink=25]
+% 15 
+\frametitle{Bringing it all together}
+
+    \begin{equation*}
+        \begin{blockarray}{cccccccccc}
+                               &                   & \b [a,b]          &
+            \g [0,1]           &\g(-\infty,\infty) &\g(-\infty,\infty) &
+            \g [0,1]           &\g(-\infty,\infty) & \g [0,1]          &
+            \g(-\infty,\infty) \\ 
+                               &                   & \b g_{1}          &
+            \g g_{2}           & \g s_{1}          & \g s_{2}          &
+            \b E_{f}^{1}       & \g E_{d}^{1}      & \g I_{f}^{1}      &
+            \g I_{d}^{1}       \\
+                               &                   &                   &
+                               &                   &                   &
+                               &                   &                   &
+             \\ 
+            \begin{block}{cc[cccccccc]}
+            \g {(-\infty,0]}   & \g Rto_{m}        & \g -1             &
+            \g m               &                   &                   &
+                               &                   &                   &
+             \\
+            \g {[0,\infty)}    & \g Rto_{M}        & \g -1             &
+            \g M               &                   &                   &
+                               &                   &                   &
+             \\
+             \g {[-1,0]}       & \g E_{f}^{1}      &\g f_{g_{1}}^{E^{1}}&
+             \g f_{g_{2}}^{E^{1}}&                 &                   &
+               \g -1           &                   &                   &
+             \\
+            \g {[0,0]}         & \g E_{d}^{1}      &                   &
+                               &\g f_{s_{1}}^{E^{1}}& \g f_{s_{2}}^{E^{1}}&
+                               & \g -1             &                   &
+             \\
+            \g {[E_{c}^{1},E_{c}^{1}]} 
+                               & \g E_{b}^{1}      &                   &
+                               &                   &                   &
+            \g 1               & \g -1             &                   &
+             \\
+            \g {[0,0]}         & \g E_{i}^{1}      &                   &
+                               &                   &                   &
+            \g -1              &                   & \g 1              &
+             \\
+            \g {[-1,0]}        & \g I_{f}^{1}      &\g f_{g_{1}}^{I^{1}}&
+            \g f_{g_{2}}^{I^{1}}&                  &                    &
+                               &                   & \g -1              &
+             \\
+            \g {[0,0]}         & \g I_{d}^{1}      &                   &
+                               &\g f_{s_{1}}^{I^{1}}&\g f_{s_{2}}^{I^{1}}&
+                               &                   &                   &
+            \g -1              \\
+            \g {[I_{c}^{1},I_{c}^{!}]}
+                               & \g I_{b}^{1}      &                   &
+                               &                   &                   &
+                               &                   & \g 1              &
+            \g -1              \\ 
+            \g {(-\infty,0]}   & \g \rho_{max}     &                   &
+                               &                   &                   &
+                               &                   & \g c              &
+             \\
+            \g {[0,\infty)}    & \g \rho_{min}     &                   &
+                               &                   &                   &
+                               &                   & \g d              & 
+             \\
+            \g {[e,f]}         & \g Oxi            &                   &
+                               &                   &                   &
+            \g oxi^{E^{1}}     &                   &                   &
+             \\
+            \g {[0,0]}         & \g Pres           &                   &
+                               & \g 1              & \g 1              &
+                               &                   &                   &
+             \\
+                               & \b Opt            & \b 1              &
+                               &                   &                   &
+                               &                   &                   &
+             \\
+            \end{block}
+        \end{blockarray}
+    \end{equation*}
 
 \end{frame}
 
