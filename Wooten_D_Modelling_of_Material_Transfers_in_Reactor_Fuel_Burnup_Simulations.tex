@@ -1672,15 +1672,41 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}*O_{e}$
 \end{frame}
 
 \begin{frame}
-\frametitle{The depletion matrix}
+\frametitle{A toy problem}
 
+    Let us consider a system of\ldots
+
+    \hspace{2cm}
+
+    \begin{itemize}
+        \item two isotopes
+            \begin{itemize}
+                \item \ce{^{233}U} 
+                \item \ce{^{135}Xe} 
+            \end{itemize}
+        \item two streams
+            \begin{itemize}
+                \item  $S_{c}$
+                \item  $S_{p}$
+            \end{itemize}
+    \end{itemize}
+
+    \hspace{2cm}
+
+    subject to a neutron flux, $\phi$.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The depletion matrix}
+% 1 toy
     \begin{equation*}
         \begin{blockarray}{cccccc}
              &
-            \ce{^{233}_{92}U} &
-            \ce{^{135}_{54}Xe} &
-            S_{c} &
-            S_{p} &
+            \b \ce{^{233}_{92}U} &
+            \w \ce{^{135}_{54}Xe} &
+            \w S_{c} &
+            \w S_{p} &
             \mathbb{N} \\
              &
              &
@@ -1689,28 +1715,400 @@ $UserTarget = \sum\limits_{e}^{E}w_{e}*N_{e}*O_{e}$
              &
              \\ 
         \begin{block}{c[cccc][c]}
-            \ce{^{233}_{92}U} &
-            -\lambda_{\ce{^{233}U}} + \gamma &
+            \b \ce{^{233}_{92}U} &
+            \w -\lambda_{\ce{^{233}U}} + \gamma &
              &
-            f_{S_{c}}^{\ce{^{233}U}} &
+            \w f_{S_{c}}^{\ce{^{233}U}} &
              &
             N_{\ce{^{233}U}} \\
-            \ce{^{135}_{54}Xe} &
-            \delta &
-            -\lambda_{\ce{^{135}Xe}} + \lambda_{S_{p}}^{\ce{^{135}Xe}} +
+            \w \ce{^{135}_{54}Xe} &
+            \w \delta &
+            \w -\lambda_{\ce{^{135}Xe}} + \lambda_{S_{p}}^{\ce{^{135}Xe}} +
                 \epsilon &
              &
              &
             N_{\ce{^{135}Xe}} \\
-            S_{c} &
+            \w S_{c} &
              &
              &
              &
              &
             amt_{S_{c}} \\
-            S_{p} &
+            \w S_{p} &
              &
-            \lambda_{S_{p}}^{\ce{^{135}Xe}} &
+            \w \lambda_{S_{p}}^{\ce{^{135}Xe}} &
+             &
+             &
+             1\\
+        \end{block}
+        \end{blockarray}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The depletion matrix}
+% 2 toy
+    \begin{equation*}
+        \begin{blockarray}{cccccc}
+             &
+            \b \ce{^{233}_{92}U} &
+            \w \ce{^{135}_{54}Xe} &
+            \w S_{c} &
+            \w S_{p} &
+            \mathbb{N} \\
+             &
+             &
+             &
+             &
+             &
+             \\ 
+        \begin{block}{c[cccc][c]}
+            \b \ce{^{233}_{92}U} &
+            \b -\lambda_{\ce{^{233}U}} + \gamma &
+             &
+            \w f_{S_{c}}^{\ce{^{233}U}} &
+             &
+            N_{\ce{^{233}U}} \\
+            \w \ce{^{135}_{54}Xe} &
+            \w \delta &
+            \w -\lambda_{\ce{^{135}Xe}} + \lambda_{S_{p}}^{\ce{^{135}Xe}} +
+                \epsilon &
+             &
+             &
+            N_{\ce{^{135}Xe}} \\
+            \w S_{c} &
+             &
+             &
+             &
+             &
+            amt_{S_{c}} \\
+            \w S_{p} &
+             &
+            \w \lambda_{S_{p}}^{\ce{^{135}Xe}} &
+             &
+             &
+             1\\
+        \end{block}
+        \end{blockarray}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{What is $\gamma$?}
+
+    \begin{equation}
+        \gamma =  - \sum \limits_{d}^{D} \sigma_{d}^{\ce{^{233}U}} \phi
+    \end{equation}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The depletion matrix}
+% 3 toy
+    \begin{equation*}
+        \begin{blockarray}{cccccc}
+             &
+            \g \ce{^{233}_{92}U} &
+            \w \ce{^{135}_{54}Xe} &
+            \b S_{c} &
+            \w S_{p} &
+            \mathbb{N} \\
+             &
+             &
+             &
+             &
+             &
+             \\ 
+        \begin{block}{c[cccc][c]}
+            \b \ce{^{233}_{92}U} &
+            \g -\lambda_{\ce{^{233}U}} + \gamma &
+             &
+            \b f_{S_{c}}^{\ce{^{233}U}} &
+             &
+            N_{\ce{^{233}U}} \\
+            \w \ce{^{135}_{54}Xe} &
+            \w \delta &
+            \w -\lambda_{\ce{^{135}Xe}} + \lambda_{S_{p}}^{\ce{^{135}Xe}} +
+                \epsilon &
+             &
+             &
+            N_{\ce{^{135}Xe}} \\
+            \w S_{c} &
+             &
+             &
+             &
+             &
+            amt_{S_{c}} \\
+            \w S_{p} &
+             &
+            \w \lambda_{S_{p}}^{\ce{^{135}Xe}} &
+             &
+             &
+             1\\
+        \end{block}
+        \end{blockarray}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The depletion matrix}
+% 4 toy
+    \begin{equation*}
+        \begin{blockarray}{cccccc}
+             &
+            \b \ce{^{233}_{92}U} &
+            \w \ce{^{135}_{54}Xe} &
+            \g S_{c} &
+            \w S_{p} &
+            \mathbb{N} \\
+             &
+             &
+             &
+             &
+             &
+             \\ 
+        \begin{block}{c[cccc][c]}
+            \g \ce{^{233}_{92}U} &
+            \g -\lambda_{\ce{^{233}U}} + \gamma &
+             &
+            \g f_{S_{c}}^{\ce{^{233}U}} &
+             &
+            N_{\ce{^{233}U}} \\
+            \b \ce{^{135}_{54}Xe} &
+            \b \delta &
+            \w -\lambda_{\ce{^{135}Xe}} + \lambda_{S_{p}}^{\ce{^{135}Xe}} +
+                \epsilon &
+             &
+             &
+            N_{\ce{^{135}Xe}} \\
+            \w S_{c} &
+             &
+             &
+             &
+             &
+            amt_{S_{c}} \\
+            \w S_{p} &
+             &
+            \w \lambda_{S_{p}}^{\ce{^{135}Xe}} &
+             &
+             &
+             1\\
+        \end{block}
+        \end{blockarray}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{What is $\delta$?}
+
+    \begin{equation}
+        b_{(\ce{^{233}U} \rightarrow \ce{^{135}Xe})} \lambda_{\ce{^{233}U}} +
+            \sum \limits_{q}^{Q} f_{(\ce{^{233}U} \rightarrow \ce{^{135}Xe})}
+            \sigma_{q}^{\ce{^{233}U}} \phi
+    \end{equation}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The depletion matrix}
+% 5 toy
+    \begin{equation*}
+        \begin{blockarray}{cccccc}
+             &
+            \g \ce{^{233}_{92}U} &
+            \b \ce{^{135}_{54}Xe} &
+            \g S_{c} &
+            \w S_{p} &
+            \mathbb{N} \\
+             &
+             &
+             &
+             &
+             &
+             \\ 
+        \begin{block}{c[cccc][c]}
+            \g \ce{^{233}_{92}U} &
+            \g -\lambda_{\ce{^{233}U}} + \gamma &
+             &
+            \g f_{S_{c}}^{\ce{^{233}U}} &
+             &
+            N_{\ce{^{233}U}} \\
+            \b \ce{^{135}_{54}Xe} &
+            \g \delta &
+            \b -\lambda_{\ce{^{135}Xe}} + \lambda_{S_{p}}^{\ce{^{135}Xe}} +
+                \epsilon &
+             &
+             &
+            N_{\ce{^{135}Xe}} \\
+            \w S_{c} &
+             &
+             &
+             &
+             &
+            amt_{S_{c}} \\
+            \w S_{p} &
+             &
+            \w \lambda_{S_{p}}^{\ce{^{135}Xe}} &
+             &
+             &
+             1\\
+        \end{block}
+        \end{blockarray}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{What is $\epsilon$?}
+
+    \begin{equation}
+        \epsilon =  - \sum \limits_{d}^{D} \sigma_{d}^{\ce{^{135}Xe}} \phi
+    \end{equation}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The depletion matrix}
+% 6 toy
+    \begin{equation*}
+        \begin{blockarray}{cccccc}
+             &
+            \g \ce{^{233}_{92}U} &
+            \g \ce{^{135}_{54}Xe} &
+            \b S_{c} &
+            \w S_{p} &
+            \mathbb{N} \\
+             &
+             &
+             &
+             &
+             &
+             \\ 
+        \begin{block}{c[cccc][c]}
+            \g \ce{^{233}_{92}U} &
+            \g -\lambda_{\ce{^{233}U}} + \gamma &
+             &
+            \g f_{S_{c}}^{\ce{^{233}U}} &
+             &
+            N_{\ce{^{233}U}} \\
+            \g \ce{^{135}_{54}Xe} &
+            \g \delta &
+            \g -\lambda_{\ce{^{135}Xe}} + \lambda_{S_{p}}^{\ce{^{135}Xe}} +
+                \epsilon &
+             &
+             &
+            N_{\ce{^{135}Xe}} \\
+            \b S_{c} &
+             &
+             &
+             &
+             &
+            amt_{S_{c}} \\
+            \w S_{p} &
+             &
+            \w \lambda_{S_{p}}^{\ce{^{135}Xe}} &
+             &
+             &
+             1\\
+        \end{block}
+        \end{blockarray}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The depletion matrix}
+% 7 toy
+    \begin{equation*}
+        \begin{blockarray}{cccccc}
+             &
+            \g \ce{^{233}_{92}U} &
+            \g \ce{^{135}_{54}Xe} &
+            \g S_{c} &
+            \b S_{p} &
+            \mathbb{N} \\
+             &
+             &
+             &
+             &
+             &
+             \\ 
+        \begin{block}{c[cccc][c]}
+            \g \ce{^{233}_{92}U} &
+            \g -\lambda_{\ce{^{233}U}} + \gamma &
+             &
+            \g f_{S_{c}}^{\ce{^{233}U}} &
+             &
+            N_{\ce{^{233}U}} \\
+            \g \ce{^{135}_{54}Xe} &
+            \g \delta &
+            \g -\lambda_{\ce{^{135}Xe}} + \lambda_{S_{p}}^{\ce{^{135}Xe}} +
+                \epsilon &
+             &
+             &
+            N_{\ce{^{135}Xe}} \\
+            \b S_{c} &
+             &
+             &
+             &
+             &
+            amt_{S_{c}} \\
+            \b S_{p} &
+             &
+            \b \lambda_{S_{p}}^{\ce{^{135}Xe}} &
+             &
+             &
+             1\\
+        \end{block}
+        \end{blockarray}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The depletion matrix}
+% f toy
+    \begin{equation*}
+        \begin{blockarray}{cccccc}
+             &
+            \b \ce{^{233}_{92}U} &
+            \b \ce{^{135}_{54}Xe} &
+            \b S_{c} &
+            \b S_{p} &
+            \mathbb{N} \\
+             &
+             &
+             &
+             &
+             &
+             \\ 
+        \begin{block}{c[cccc][c]}
+            \b \ce{^{233}_{92}U} &
+            \b -\lambda_{\ce{^{233}U}} + \gamma &
+             &
+            \b f_{S_{c}}^{\ce{^{233}U}} &
+             &
+            N_{\ce{^{233}U}} \\
+            \b \ce{^{135}_{54}Xe} &
+            \b \delta &
+            \b -\lambda_{\ce{^{135}Xe}} + \lambda_{S_{p}}^{\ce{^{135}Xe}} +
+                \epsilon &
+             &
+             &
+            N_{\ce{^{135}Xe}} \\
+            \b S_{c} &
+             &
+             &
+             &
+             &
+            amt_{S_{c}} \\
+            \b S_{p} &
+             &
+            \b \lambda_{S_{p}}^{\ce{^{135}Xe}} &
              &
              &
              1\\
